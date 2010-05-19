@@ -9,7 +9,10 @@ class Schedule
 
   def plan
     return 'No plan' unless self.date.is_a? Time
-    if (1..5).include? self.date.wday
+
+    if self.date.wday == 2
+      'Boston.rb'
+    elsif (1..5).include? self.date.wday
       'Hack'
     else
       'Fish'

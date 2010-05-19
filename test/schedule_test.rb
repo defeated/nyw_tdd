@@ -35,5 +35,11 @@ class ScheduleTest < Test::Unit::TestCase
     date        = Time.parse(date_string)
     assert_equal date, @schedule2.date
   end
+  
+  def test_plan_with_tuesday_is_boston_rb
+    date = Time.parse('2010-05-18')
+    @schedule1.date = date
+    assert_equal 'Boston.rb', @schedule1.plan
+  end
 
 end
